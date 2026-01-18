@@ -114,7 +114,7 @@ body {
 }
 
 .main-content::before {
-  background-image: url("Pokh.jpg");
+  background-image: url("Pokhh.jpg");
 }
 
 .main-content1::before {
@@ -271,3 +271,4 @@ hr {
   background: #ccc;
   margin: 30px 0;
 }
+
