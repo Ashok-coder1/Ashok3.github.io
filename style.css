@@ -1,0 +1,273 @@
+
+
+/* ===== Base ===== */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 8px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  box-shadow: 0 5px 20px 4px rgba(0,0,0,0.5);
+}
+
+/* space between buttons */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;               
+}
+
+
+.btn-primary {
+  background: #6200ea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #4b00c8;
+}
+
+/* ===== Header ===== */
+.header {
+  background: white;
+  padding: 8px 20px;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6200ea, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* Slide animation */
+.slide {
+  animation: slide 2s ease-out infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-20px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(0); }
+}
+
+/* ===== Navigation ===== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav a:hover {
+  color: #6200ea;
+}
+
+/* ===== Hero & Background Sections ===== */
+.main-content,
+.main-content1 {
+  position: relative;
+  padding: 60px 20px;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.main-content::before,
+.main-content1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: scale(1.1);
+  z-index: -2;
+}
+
+.main-content::before {
+  background-image: url("Pokh.jpg");
+}
+
+.main-content1::before {
+  background-image: url("Contactback.jpg");
+}
+
+
+.main-content::after,
+.main-content1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(127, 127, 184, 0.3);
+  z-index: -1;
+}
+
+/* ===== Typewriter ===== */
+.typewriter {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: typing 3s steps(22) infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 40%; }
+}
+
+/* ===== Projects Heading ===== */
+.Project {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.project-box {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #6200ea;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 8px 25px 4px rgba(0,0,0,0.6);
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 60px;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #f8f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px 4px rgba(0,0,0,0.6);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Card top images */
+.card-top,
+.card-top1,
+.card-top2 {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-bottom-right-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-top { background-image: url("Coding.jpg"); }
+.card-top1 { background-image: url("Moun.jpg"); }
+.card-top2 { background-image: url("Food.webp"); }
+
+/* Icon */
+.icon {
+  width: 150px;
+  height: 35px;
+  background: #eaeaea;
+  font-weight: bold;
+  font-size: 22px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 25px 4px rgba(0,0,0,0.6);
+}
+
+/* Card content */
+.card-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ===== Contact Box ===== */
+.line-box {
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 15px 90px;
+  background: transparent;
+  box-shadow: 0 15px 25px rgba(255,255,255,0.7);
+}
+
+/* ===== Social Icons ===== */
+.social-icons-footer {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons-footer img {
+  width: 25px;
+  transition: transform 0.3s;
+}
+
+.social-icons-footer img:hover {
+  transform: scale(1.2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .typewriter {
+    font-size: 1.3rem;
+  }
+}
+
+
+hr {
+  border: none;
+  height: 2px;
+  background: #ccc;
+  margin: 30px 0;
+}

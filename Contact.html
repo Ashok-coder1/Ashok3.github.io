@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #6200ea;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4b00c8;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #4b00c8;
+    }
+
+    @media (max-width: 500px) {
+      form {
+        padding: 20px;
+      }
+      input, textarea {
+        font-size: 13px;
+        padding: 8px;
+      }
+      input[type="submit"] {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Formspree form action -->
+  <form action="https://formspree.io/f/xgooardq" method="POST">
+  
+  <input type="hidden" name="_subject" value="New Website Feedback">
+  <input type="hidden" name="_template" value="table">
+
+  <h2>Contact Ashok</h2>
+
+  <label>First Name</label>
+  <input type="text" name="First Name" required>
+
+  <label>Last Name</label>
+  <input type="text" name="Last Name" required>
+
+  <label>Email</label>
+  <input type="email" name="Email" required>
+
+  <label>Message</label>
+  <textarea name="Message" rows="5" required></textarea>
+
+  <input type="submit" value="Send Message">
+<br><br>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</form>
+
+</body>
+</html>
