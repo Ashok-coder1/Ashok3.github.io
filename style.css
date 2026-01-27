@@ -90,7 +90,7 @@ body {
 .main-content1 {
   position: relative;
   padding: 60px 20px;
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,8 +108,8 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: blur(2px);
-  transform: scale(1.1);
+  filter: blur(1.5px);
+  transform: scale(1.05);
   z-index: -2;
 }
 
@@ -133,15 +133,21 @@ body {
 
 /* ===== Typewriter ===== */
 .typewriter {
+  display: inline-block;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid white;
-  animation: typing 3s steps(22) infinite;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+
+  animation:
+    typing 3.5s steps(30, end) infinite,
+    blink 0.7s step-end infinite;
 }
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 40%; }
+  to { width: 100%; }
 }
 
 /* ===== Projects Heading ===== */
@@ -229,10 +235,21 @@ body {
 .line-box {
   border: 3px solid white;
   border-radius: 10px;
-  padding: 15px 90px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
   background: transparent;
   box-shadow: 0 15px 25px rgba(255,255,255,0.7);
 }
+
+.line-box h2 {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+}
+
+.line-box p {
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+}
+
 
 /* ===== Social Icons ===== */
 .social-icons-footer {
@@ -271,5 +288,6 @@ hr {
   background: #ccc;
   margin: 30px 0;
 }
+
 
 
