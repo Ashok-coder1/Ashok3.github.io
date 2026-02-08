@@ -1,58 +1,110 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="contactme.css">
-</head>
-<body>
+body {
+  background-color: #1F3A40;
+  margin: 0;
+}
 
-<div class="qualification-section">
+.qualification-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  /* background-color removed from here */
+}
 
-  <!-- TOP MESSAGE BOX -->
-  <div class="message-box">
-    <div class="decor-line"></div>
+/* Message box */
+.message-box {
+  background: #edeff2; /* Professional dark-blue-gray */
+  color: #060606;      /* Light text for contrast */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); /* stronger shadow */
+  margin: 0 auto 60px auto;
+  width: 90%;
+  max-width: 600px;
+  min-height: 200px;
+}
 
-    <p>
-      Dear web visitors & clients,<br><br>
-      The projects displayed on this <a href="index.html#projects">Portfolio</a> represent my hands-on experience and technical skills.
-      My hand-coding qualifications are outlined below for your reference (The remaining percentage will be provided through AI).
-      I welcome any <a href="Contact.html">Feedback</a> or suggestions to help me continue learning and improving.
-      Please feel free to get in <a href="index.html#contact">Touch</a>.
-      <br><br>
-      Thank you.
-    </p>
-  </div>
+.decor-line {
+  width: 70px;
+  height: 5px;
+  background: #00c6ff; /* Professional accent color */
+  margin: 0 auto 20px;
+  border-radius: 5px;
+}
 
-  <!-- SKILLS ROW -->
-  <div class="skills-row">
-    <div class="skill-card">
-      <h3>HTML</h3>
-      <div class="progress-bar">
-        <div class="progress html">98%</div>
-      </div>
-    </div>
+/* Skills row */
+.skills-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
 
-    <div class="skill-card">
-      <h3>CSS</h3>
-      <div class="progress-bar">
-        <div class="progress css">94%</div>
-      </div>
-    </div>
+/* Skill cards */
+.skill-card {
+  background: #fafcfb; /* Professional dark shade */
+  color: #0b0a0a;      /* Light text */
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
 
-    <div class="skill-card">
-      <h3>JavaScript</h3>
-      <div class="progress-bar">
-        <div class="progress js">80%</div>
-      </div>
-    </div>
-  </div>
+.skill-card h3 {
+  margin-bottom: 15px;
+}
 
-  <br><br>
-  <a href="index.html" class="back-link">← Back</a>
-</div>
+/* Progress bars */
+.progress-bar {
+  background: #34495e; /* darker bar background */
+  border-radius: 20px;
+  overflow: hidden;
+}
 
-</body>
-</html>
+.progress {
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Individual skills */
+.progress.html { width: 90%; background: #e34c26; }
+.progress.css  { width: 85%; background: #264de4; }
+.progress.js   { width: 70%; background: #f0db4f; color: #000; }
+
+/* Responsive for tablets & mobiles */
+@media (max-width: 1024px) {
+  .skills-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-row {
+    grid-template-columns: 1fr;
+  }
+
+  .message-box {
+    padding: 20px;
+    min-height: auto;
+  }
+}
+
+/* Back link */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #6200ff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
