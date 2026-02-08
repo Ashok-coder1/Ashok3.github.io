@@ -1,0 +1,153 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f4f7fb;
+  color: #1f2937;
+}
+
+/* Section */
+.services-section {
+  padding: 80px 20px 40px; /* reduce bottom padding */
+  background-color: #1f3a40;
+  min-height: auto;       /* FIX */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #cbd5e1;
+  margin-bottom: 50px;
+}
+
+/* Container */
+.services-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.service-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 20px 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Summary */
+.service-card summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #2563eb;
+}
+
+.service-card span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Content */
+.service-card ul {
+  margin-top: 20px;
+  padding-left: 18px;
+}
+
+.service-card ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.tech {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Open state */
+details[open] summary span {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+.services-footer {
+  background-color: #1f3a40;
+  min-height: auto;        /* REMOVE full height */
+  padding: 80px 20px;     /* Controlled spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-footer h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+}
+
+.services-footer p {
+  font-size: 16px;
+  color: #d1e3e8;
+  margin-bottom: 40px;
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: #4ebff3;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.footer-content {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}

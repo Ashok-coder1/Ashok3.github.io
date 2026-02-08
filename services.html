@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Services</title>
+  <link rel="stylesheet" href="servicestyle.css">
+</head>
+<body>
+
+<section class="services-section">
+  <h2 class="section-title">My Services</h2>
+  <p class="section-subtitle">Professional solutions tailored to your needs</p>
+
+  <div class="services-container">
+
+    <details class="service-card">
+      <summary>
+        <h3>Frontend Web Development</h3>
+        <span>View Details</span>
+      </summary>
+      <ul>
+        <li>Landing Page</li>
+        <li>Portfolio Website</li>
+        <li>Personal Website</li>
+        <li>Business / Corporate Website</li>
+        <li>E-commerce Website</li>
+        <li>Blog Website</li>
+        <li>Agency Website</li>
+        <li>Educational Website</li>
+        <li>Website Maintenance</li>
+        <li>Domain, Hosting & SEO</li>
+      </ul>
+      <p class="tech">
+        Technologies: HTML, CSS, Wix, WordPress (As per project requirement)
+      </p>
+    </details>
+
+    <details class="service-card">
+      <summary>
+        <h3>Virtual Assistant</h3>
+        <span>View Details</span>
+      </summary>
+      <ul>
+        <li>Data Entry</li>
+        <li>Web Research & Web Scraping</li>
+        <li>Lead Generation</li>
+        <li>Copy-Paste Work</li>
+      </ul>
+    </details>
+
+    <details class="service-card">
+      <summary>
+        <h3>Customer Support</h3>
+        <span>View Details</span>
+      </summary>
+      <ul>
+        <li>Live Chat Support</li>
+        <li>Ticket Handling & Support</li>
+      </ul>
+    </details>
+
+  </div>
+</section>
+
+<!-- ✅ FOOTER SECTION (FULL WIDTH & CENTERED) -->
+
+<section class="services-footer">
+  <div class="footer-content">
+    <h3>Contact Me</h3>
+    <p>
+      Have a project in mind or need my services?
+      <a href="#" onclick="LiveChatWidget.call('maximize'); return false;">
+      Let’s talk.
+      </a>
+    </p>
+    <a href="index.html" class="back-home-btn">← Back To Home</a>
+  </div>
+</section>
+
+<!-- LiveChat -->
+<script>
+  window.__lc = window.__lc || {};
+  window.__lc.license = 19486510;
+  window.__lc.integration_name = "manual_channels";
+  window.__lc.product_name = "livechat";
+  (function(n,t,c){
+    function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
+    var e={_q:[],_h:null,_v:"2.0",
+      on:function(){i(["on",c.call(arguments)])},
+      once:function(){i(["once",c.call(arguments)])},
+      off:function(){i(["off",c.call(arguments)])},
+      get:function(){
+        if(!e._h) throw new Error("LiveChatWidget not loaded");
+        return i(["get",c.call(arguments)])
+      },
+      call:function(){i(["call",c.call(arguments)])},
+      init:function(){
+        var n=t.createElement("script");
+        n.async=!0;
+        n.src="https://cdn.livechatinc.com/tracking.js";
+        t.head.appendChild(n)
+      }
+    };
+    !n.__lc.asyncInit && e.init();
+    n.LiveChatWidget = n.LiveChatWidget || e;
+  })(window,document,[].slice);
+</script>
+
+
+
+</body>
+</html>
