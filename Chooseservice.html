@@ -1,10 +1,11 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- ✅ VERY IMPORTANT for mobile responsiveness -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Choose a Project</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,11 +23,12 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 16px; /* ✅ prevents edge cut on mobile */
 }
 
 .container {
   background: #fff;
-  padding: 32px;
+  padding: 24px;
   border-radius: 12px;
   width: 100%;
   max-width: 420px;
@@ -44,12 +46,13 @@ h2 {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 12px;
   cursor: pointer;
   transition: 0.2s ease;
+  font-size: 15px;
 }
 
 .option:hover {
@@ -60,17 +63,9 @@ h2 {
   transform: scale(1.2);
 }
 
-.center-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
 .continue-btn {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   margin-top: 15px;
   background: #0073e6;
   color: white;
@@ -90,6 +85,36 @@ h2 {
   font-size: 13px;
   color: #666;
   margin-top: 12px;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #0073e6;
+}
+
+/* ✅ Extra polish for very small screens */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .option {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .note {
+    font-size: 12px;
+  }
 }
 </style>
 </head>
@@ -134,16 +159,13 @@ h2 {
     Customer Support
   </label>
 
-  
- <button class="continue-btn" onclick="continueNext()">Continue</button>
-
+  <button class="continue-btn" onclick="continueNext()">Continue</button>
 
   <p class="note">You can select only one option.</p>
 
   <div class="center-btn">
-  <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
-</div>
-
+    <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
+  </div>
 </div>
 
 <script>
@@ -155,15 +177,13 @@ function continueNext() {
     return;
   }
 
-  // OPTIONAL: store selected project (useful later)
+  // Store selected service
   localStorage.setItem("selectedProject", selected.value);
 
-  // Redirect only after selection
+  // Redirect after selection
   window.location.href = "Payments.html";
 }
 </script>
 
-
 </body>
 </html>
-
