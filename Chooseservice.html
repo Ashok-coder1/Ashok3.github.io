@@ -1,0 +1,168 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Choose a Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #1F3A40;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  background: #f7f9fb;
+}
+
+.option input {
+  transform: scale(1.2);
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.continue-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background: #005bb5;
+}
+
+.note {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-top: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Please choose a project</h2>
+
+  <label class="option">
+    <input type="radio" name="project" value="Portfolio Website">
+    Portfolio Website
+  </label>
+
+  <label class="option">
+    <input type="radio" name="project" value="Personal Website">
+    Personal Website
+  </label>
+
+  <label class="option">
+    <input type="radio" name="project" value="Landing Page">
+    Landing Page
+  </label>
+
+  <label class="option">
+    <input type="radio" name="project" value="Business Website">
+    Business Website
+  </label>
+
+  <label class="option">
+    <input type="radio" name="project" value="Website Maintenance">
+    Website Maintenance
+  </label>
+
+  <label class="option">
+    <input type="radio" name="project" value="Virtual Assistant">
+    Virtual Assistant
+  </label>
+
+  <label class="option">
+    <input type="radio" name="project" value="Customer Support">
+    Customer Support
+  </label>
+
+  
+ <button class="continue-btn" onclick="continueNext()">Continue</button>
+
+
+  <p class="note">You can select only one option.</p>
+
+  <div class="center-btn">
+  <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
+</div>
+
+</div>
+
+<script>
+function continueNext() {
+  const selected = document.querySelector('input[name="project"]:checked');
+
+  if (!selected) {
+    alert("Please select a project to continue.");
+    return;
+  }
+
+  // OPTIONAL: store selected project (useful later)
+  localStorage.setItem("selectedProject", selected.value);
+
+  // Redirect only after selection
+  window.location.href = "payments.html";
+}
+</script>
+
+
+</body>
+</html>

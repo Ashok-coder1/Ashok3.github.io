@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #1F3A40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.payment-container {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #f7f9fb;
+}
+
+.option input {
+  transform: scale(1.2);
+}
+
+.option img {
+  width: 40px;
+}
+
+#payBtn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#payBtn:hover {
+  background: #e55d00;
+}
+
+.note {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  margin: 15px 0 20px;
+}
+
+.qr-box {
+  display: none;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.qr-box img {
+  width: 180px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.upload-form {
+  border-top: 1px solid #343333;
+  padding-top: 20px;
+}
+
+.upload-form label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.upload-form input,
+.upload-form button {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.upload-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.upload-form button {
+  background: #4ebff3;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.upload-form button:hover {
+  background: #005bb5;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+.back-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #888;
+}
+
+.back-btn:hover {
+  background: #666;
+}
+
+.total-amount {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.total-amount span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="payment-container">
+  <h2>Secure Payment</h2>
+
+  <!-- Card -->
+  <label class="option">
+    <input type="radio" name="paymentMethod" value="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/256px-Mastercard_2019_logo.svg.png">
+    <span>Debit / Credit / MasterCard</span>
+  </label>
+
+  <!-- Payoneer -->
+  <label class="option">
+    <input type="radio" name="paymentMethod" value="payoneer">
+    <img src="Payoneer.webp">
+    <span>Payoneer User</span>
+  </label>
+
+  <!-- eSewa -->
+  <label class="option">
+    <input type="radio" name="paymentMethod" value="esewa">
+    <img src="esewa.webp">
+    <span>eSewa</span>
+  </label>
+
+  <button id="payBtn">Proceed to Payment</button>
+
+  <div class="total-amount">
+  Total Amount: <span>$40</span>
+</div>
+
+  <p class="note">
+    You’ll be redirected to Payoneer to complete payment securely.
+  </p>
+
+  <!-- eSewa QR -->
+  <div class="qr-box" id="esewaQR">
+    <strong>Scan & Pay with eSewa</strong>
+    <img src="eSewaQR.jpeg" alt="eSewa QR">
+  </div>
+
+  <!-- Upload Form -->
+  <div class="upload-form">
+    <p><strong><h5>After completing your payment, please return to this page, upload your payment slip and submit it for verification.</h5></strong></p>
+
+    <form action="https://formspree.io/f/xgooardq" method="POST" enctype="multipart/form-data">
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+
+      <label>Email Address</label>
+      <input type="email" name="email" required>
+
+      <label>Payment Screenshot</label>
+      <input type="file" name="attachment" accept="image/*" required>
+
+      <button type="submit">Submit Payment Proof</button>
+    </form>
+
+    <p class="small-text">Payments will verified manually, and we’ll get back to you by email shortly.</p>
+    <hr>
+    <button class="back-btn" onclick="window.location.href='chooseservice.html'">← Back</button>
+
+</div>
+
+<script>
+document.getElementById('payBtn').addEventListener('click', () => {
+  const selected = document.querySelector('input[name="paymentMethod"]:checked');
+  const qrBox = document.getElementById('esewaQR');
+
+  if (!selected) {
+    alert("Please select a payment method.");
+    return;
+  }
+
+  qrBox.style.display = "none";
+
+  if (selected.value === "esewa") {
+    qrBox.style.display = "block";
+    return;
+  }
+
+  const links = {
+    card: "https://www.payoneer.com",
+    payoneer: "https://www.payoneer.com"
+  };
+
+  // Open Payoneer in the SAME TAB
+  window.location.href = links[selected.value];
+});
+</script>
+
+
+</body>
+</html>
