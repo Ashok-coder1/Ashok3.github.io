@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- ✅ REQUIRED for mobile responsiveness -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Secure Payment</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Inter', Arial, sans-serif;
@@ -17,14 +23,15 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  padding: 16px; /* ✅ prevents edge cut on mobile */
 }
 
 .payment-container {
   background: #fff;
-  padding: 32px;
+  padding: 24px;
   border-radius: 12px;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
@@ -41,9 +48,10 @@ h2 {
   gap: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 12px;
+  padding: 14px;
   margin-bottom: 12px;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .option:hover {
@@ -55,12 +63,12 @@ h2 {
 }
 
 .option img {
-  width: 40px;
+  width: 36px;
 }
 
 #payBtn {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   margin-top: 10px;
   background: #ff6a00;
   color: white;
@@ -73,6 +81,20 @@ h2 {
 
 #payBtn:hover {
   background: #e55d00;
+}
+
+.total-amount {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.total-amount span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff6a00;
 }
 
 .note {
@@ -90,14 +112,21 @@ h2 {
 
 .qr-box img {
   width: 180px;
+  max-width: 100%;
   margin-top: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
 }
 
 .upload-form {
-  border-top: 1px solid #343333;
+  border-top: 1px solid #ddd;
   padding-top: 20px;
+}
+
+.upload-form h5 {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .upload-form label {
@@ -114,7 +143,7 @@ h2 {
 }
 
 .upload-form input {
-  padding: 10px;
+  padding: 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
@@ -123,7 +152,7 @@ h2 {
   background: #4ebff3;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 14px;
   border-radius: 6px;
   cursor: pointer;
 }
@@ -136,33 +165,40 @@ h2 {
   font-size: 12px;
   color: #777;
   text-align: center;
+  margin-top: 6px;
 }
 
 .back-btn {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 12px;
   background: #888;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .back-btn:hover {
   background: #666;
 }
 
-.total-amount {
-  text-align: center;
-  margin-top: 12px;
-  font-size: 15px;
-  color: #333;
-  font-weight: 500;
+/* ✅ Extra polish for small screens */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .option {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .note,
+  .small-text {
+    font-size: 12px;
+  }
 }
-
-.total-amount span {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff6a00;
-}
-
-
 </style>
 </head>
 
@@ -195,8 +231,8 @@ h2 {
   <button id="payBtn">Proceed to Payment</button>
 
   <div class="total-amount">
-  Total Amount: <span>$40</span>
-</div>
+    Total Amount: <span>$40</span>
+  </div>
 
   <p class="note">
     You’ll be redirected to Payoneer to complete payment securely.
@@ -210,7 +246,9 @@ h2 {
 
   <!-- Upload Form -->
   <div class="upload-form">
-    <p><strong><h5>After completing your payment, please return to this page, upload your payment slip and submit it for verification.</h5></strong></p>
+    <h5>
+      After completing your payment, please return to this page, upload your payment slip and submit it for verification.
+    </h5>
 
     <form action="https://formspree.io/f/xgooardq" method="POST" enctype="multipart/form-data">
       <label>Full Name</label>
@@ -225,10 +263,12 @@ h2 {
       <button type="submit">Submit Payment Proof</button>
     </form>
 
-    <p class="small-text">Payments will verified manually, and we’ll get back to you by email shortly.</p>
-    <hr>
-    <button class="back-btn" onclick="window.location.href='chooseservice.html'">← Back</button>
+    <p class="small-text">
+      Payments are verified manually, and we’ll get back to you by email shortly.
+    </p>
 
+    <button class="back-btn" onclick="window.location.href='Chooseservice.html'">← Back</button>
+  </div>
 </div>
 
 <script>
@@ -253,11 +293,9 @@ document.getElementById('payBtn').addEventListener('click', () => {
     payoneer: "https://www.payoneer.com"
   };
 
-  // Open Payoneer in the SAME TAB
   window.location.href = links[selected.value];
 });
 </script>
-
 
 </body>
 </html>
