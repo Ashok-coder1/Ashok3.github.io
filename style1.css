@@ -207,3 +207,70 @@ footer a { text-decoration: none; color: #22c55e; }
   .social-icons { padding-right: 0; margin-bottom: 60px; }
   .social-icons a { font-size: 20px; margin: 0 10px; }
 }
+
+/* ================== MOBILE FIXES ================== */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Fix call button extra margin */
+  .call-btn {
+    margin-left: 0 !important;
+    width: auto;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 20px 15px !important;
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  /* Remove extra right padding for social icons */
+  .social-icons {
+    padding-right: 0 !important;
+    margin-bottom: 20px;
+  }
+
+  /* Buttons container */
+  .buttons {
+    padding: 0 10px !important;
+    overflow-x: auto;
+  }
+
+  /* Carousel adjustments */
+  .carousel {
+    width: 180px !important;
+    height: 250px !important;
+  }
+  .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(160px) !important; }
+  .carousel-item:nth-child(2) { transform: rotateY(72deg) translateZ(160px) !important; }
+  .carousel-item:nth-child(3) { transform: rotateY(144deg) translateZ(160px) !important; }
+  .carousel-item:nth-child(4) { transform: rotateY(216deg) translateZ(160px) !important; }
+  .carousel-item:nth-child(5) { transform: rotateY(288deg) translateZ(160px) !important; }
+}
+
+/* Extra small screens (mobile phones) */
+@media (max-width: 480px) {
+  .carousel {
+    width: 150px !important;
+    height: 210px !important;
+  }
+  .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(120px) !important; }
+  .carousel-item:nth-child(2) { transform: rotateY(72deg) translateZ(120px) !important; }
+  .carousel-item:nth-child(3) { transform: rotateY(144deg) translateZ(120px) !important; }
+  .carousel-item:nth-child(4) { transform: rotateY(216deg) translateZ(120px) !important; }
+  .carousel-item:nth-child(5) { transform: rotateY(288deg) translateZ(120px) !important; }
+}
+
+/* Tawk.to bubble positioning (optional) */
+.tawk-min-container {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+
