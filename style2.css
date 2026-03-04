@@ -1,0 +1,208 @@
+/* ============================
+   General Body & Background
+============================ */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  overflow-x: hidden;
+  color: #e5e7eb;
+}
+
+/* Background Canvas */
+#network-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ============================
+   Header
+============================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background: #101112;
+  position: relative;
+  flex-wrap: wrap;
+  z-index: 999;
+}
+
+header .logo {
+  height: 105px;
+}
+
+/* Logo Style */
+.logo {
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+/* Up-Down Animation */
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Navbar links */
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+header nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #22c55e;
+}
+
+/* Remove hamburger menu */
+.menu-toggle {
+  display: none;
+}
+
+/* ============================
+   About Container
+============================ */
+.about-container {
+  max-width: 900px;
+  margin: 120px auto 60px auto;
+  padding: 40px;
+  background: rgba(16,17,18,0.85);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.about-container h2,
+.about-container h3 {
+  color: #22c55e;
+}
+
+.about-container h2 { font-size: 28px; margin-bottom: 20px; }
+.about-container h3 { font-size: 22px; margin-top: 30px; }
+.about-container p { margin-top: 10px; line-height: 1.6; font-size: 16px; }
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #22c55e;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.small-btn {
+  display: block;                 /* make it block so margin auto works */
+  width: fit-content;             /* button width adjusts to content */
+  padding: 10px 20px;
+  background: linear-gradient(45deg,#00e0ff,#22c55e);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.4s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  font-size: 14px;
+  margin: 15px auto 0 auto;       /* top margin 15px, horizontal auto = centered */
+  text-align: center;             /* ensures text inside button is centered */
+}
+
+.small-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+
+.cta-btn:hover { background: #16a34a; }
+
+/* ============================
+   Footer
+============================ */
+footer {
+  background: #101112;
+  color: #e5e7eb;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer a { color: #22c55e; text-decoration: none; }
+
+.social-icons {
+  padding-right: 80px; /* move slightly left */
+}
+
+.social-icons a { 
+  color: #e5e7eb; 
+  margin: 0 12px; 
+  font-size: 24px; 
+  transition: 0.3s;
+}
+
+.social-icons a:hover { color: #22c55e; }
+
+
+
+/* ============================
+   Responsive Styles
+============================ */
+@media (max-width: 768px) {
+
+  /* About Container */
+  .about-container {
+    margin: 100px 20px 50px 20px;
+    padding: 30px;
+  }
+
+  /* Header - Mobile */
+  header {
+    flex-direction: column;       /* stack logo + nav */
+    align-items: center;          /* logo centered */
+    padding: 10px 20px;
+    gap: 10px;                    /* spacing between logo and nav */
+  }
+
+  header nav {
+    display: flex;               /* keep links visible */
+    flex-direction: row;         /* horizontal links */
+    justify-content: center;     /* center below logo */
+    flex-wrap: wrap;             /* wrap if screen too small */
+    gap: 20px;                   /* spacing between links */
+  }
+
+  /* Footer */
+  footer {
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .social-icons {
+    padding-right: 0;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
