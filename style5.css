@@ -1,5 +1,3 @@
-
-
 /* ================== GLOBAL STYLES ================== */
 body {
   margin: 0;
@@ -37,7 +35,6 @@ header .logo { height: 105px; }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
-
 
 header nav { display: flex; gap: 30px; }
 header nav a {
@@ -146,7 +143,12 @@ footer a { text-decoration: none; color: #22c55e; }
     padding: 15px; 
     gap: 10px; 
   }
-  header .logo { height: 100px !important; } /* Kept your preferred big logo size */
+  
+  /* FIXED: Logo is now big on mobile */
+  header .logo { 
+    height: 100px !important; 
+  }
+  
   header .call-btn { font-size: 14px; padding: 8px 16px; margin: 0; }
   header nav { width: 100%; justify-content: center; gap: 20px; margin-top: 5px; }
   header nav a { font-size: 14px; }
@@ -159,21 +161,22 @@ footer a { text-decoration: none; color: #22c55e; }
 
   /* FOOTER CENTER FIX */
   footer {
-    flex-direction: column; /* Stacks items vertically */
-    text-align: center;     /* Centers all text lines */
+    flex-direction: column; 
+    text-align: center;     
     padding: 30px 20px !important; 
-    gap: 20px;              /* Adds space between text and icons */
+    gap: 20px;              
   }
 
+  /* FIXED: Footer icons centered and offset removed */
   .social-icons {
-    padding-right: 0 !important; /* Removes the 80px desktop offset */
+    padding-right: 0 !important; 
     display: flex;
-    justify-content: center;     /* Centers the icons horizontally */
+    justify-content: center;     
     width: 100%;
-    margin-bottom: 20px;         /* Space to avoid overlapping chat widget */
+    margin-bottom: 20px;         
   }
 
   .social-icons a {
-    margin: 0 15px;              /* Even spacing between icons */
+    margin: 0 15px;              
   }
 }
