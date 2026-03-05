@@ -92,28 +92,25 @@ header nav a:hover { color: #22c55e; transform: scale(1.05); }
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
-/* ================== BOOK NOW BUTTON ================== */
-.book-now-container {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.book-now-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: linear-gradient(45deg, #22c55e, #16a34a);
+.small-btn {
+  display: block;                 /* make it block so margin auto works */
+  width: fit-content;             /* button width adjusts to content */
+  padding: 10px 20px;
+  background: linear-gradient(45deg,#00e0ff,#22c55e);
   color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
+  font-weight: 600;
+  border-radius: 50px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.4s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  font-size: 14px;
+  margin: 15px auto 0 auto;       /* top margin 15px, horizontal auto = centered */
+  text-align: center;             /* ensures text inside button is centered */
 }
 
-.book-now-btn:hover {
-  background: linear-gradient(45deg, #16a34a, #22c55e);
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+.small-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
 /* ================== FOOTER ================== */
@@ -180,4 +177,3 @@ footer a { text-decoration: none; color: #22c55e; }
     margin: 0 20px;              
   }
 }
-
