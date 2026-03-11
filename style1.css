@@ -334,10 +334,11 @@ header nav.active {
   }
 }
 
-.call-btn{
-display:flex;
-align-items:center;
-justify-content:flex-start;
-padding-left:20px;
+.call-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px; /* equal left & right */
 }
+
 
