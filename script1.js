@@ -226,3 +226,8 @@ if (canvas && ctx) {
   });
 
 })();
+
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("active");
+}
+
