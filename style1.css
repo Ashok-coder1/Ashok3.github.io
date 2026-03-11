@@ -43,7 +43,8 @@ header .logo { height: 105px; }
 
 .call-btn {
   display: inline-block;
-  padding: 10px 22px;
+  padding: 10px 17px;
+  text-align:center;
   background: linear-gradient(45deg, #22c55e, #16a34a);
   color: #ffffff;
   text-decoration: none;
@@ -166,7 +167,7 @@ footer {
 footer a { text-decoration: none; color: #22c55e; }
 
 .social-icons { padding-right: 80px; }
-.social-icons a { color: #e5e7eb; margin: 0 20px; font-size: 24px; transition: 0.3s; }
+.social-icons a { color: #e5e7eb; margin: 0 15px; font-size: 24px; transition: 0.3s; }
 .social-icons a:hover { color: #22c55e; }
 
 
@@ -179,29 +180,36 @@ footer a { text-decoration: none; color: #22c55e; }
   }
 
   header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px !important;
-    gap: 10px;
-  }
-  
-  
-  /* Logo made bigger for mobile */
-  header .logo { height: 100px !important; }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px !important;
+}
 
-  .call-btn { 
-    margin-left: 0 !important; 
-    font-size: 14px; 
-    padding: 10px 20px; 
-    width: auto;
-  }
+/* First row left */
+header .logo { 
+  height: 110px !important;
+  width: 30%;
+}
 
-  header nav { 
-    width: 100%; 
-    justify-content: center; 
-    gap: 15px; 
-    margin-top: 10px; 
-  }
+/* First row right */
+.call-btn { 
+  margin-left: 0 !important;
+  font-size: 14px;
+  padding: 8px 15px;
+  width: 20%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Second row menu */
+header nav { 
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
 
   .scene { 
     height: 340px; 
@@ -255,4 +263,81 @@ footer a { text-decoration: none; color: #22c55e; }
   .carousel-overlay { height: 50%; }
 }
 
+
+/* ===== MOBILE MENU ===== */
+
+.menu-toggle{
+display:none;
+font-size:26px;
+color:white;
+cursor:pointer;
+}
+
+/* mobile layout */
+@media (max-width:768px){
+
+header{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+position:relative;
+}
+
+.logo{
+order:1;
+}
+
+.call-btn{
+order:2;
+margin-left:auto;
+margin-right:50px;
+}
+
+.menu-toggle{
+display:block;
+order:3;
+}
+
+/* Mobile menu */
+header nav {
+  display: none;
+  position: absolute;
+  top: 60px;            /* adjust based on your header height */
+  right: 10px;          /* align menu to the right edge */
+  background: #101112;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  width: max-content;   /* shrink to fit menu text */
+  text-align: left;    /* align text inside box to the right */
+  z-index: 999;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+}
+
+header nav.active {
+  display: flex;
+}
+
+/* Optional: small screen adjustment */
+@media (max-width: 480px) {
+  header nav {
+    right: 5px;
+    padding: 12px 16px;
+  }
+}
+
+.call-btn{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+padding-left:20px;
+}
 
