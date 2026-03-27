@@ -1,78 +1,322 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Web Ashok</title>
-<link rel="icon" href="Logotop.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Web Ashok</title>
+    <link rel="icon" href="Logotop.png" type="image/png">
 
-<!-- Font -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- External CSS -->
-<link rel="stylesheet" href="style3.css">
+    <style>
+        /* ============================
+           Body & Background
+        ============================ */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0f172a;
+            overflow-x: hidden;
+            color: #e5e7eb;
+        }
+
+        #network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* ============================
+           Header (Master Template)
+        ============================ */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #101112;
+            position: relative;
+            flex-wrap: wrap;
+            z-index: 999;
+        }
+
+        header .logo { 
+            height: 105px; 
+            animation: floatLogo 3s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .call-btn {
+            display: inline-block;
+            padding: 8px 14px;
+            text-align: center;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            margin-left: 220px;
+            transition: 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .call-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        header nav { display: flex; gap: 30px; }
+        header nav a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        header nav a:hover { color: #22c55e; transform: scale(1.05); }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ============================
+           Contact Form Style (Your Style)
+        ============================ */
+        .contact-container {
+            max-width: 600px;
+            margin: 80px auto 50px auto;
+            background: rgba(16,17,18,0.85);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            color: #e5e7eb;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            color: #22c55e;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-container input,
+        .contact-container textarea,
+        .contact-container select {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #101112;
+            color: #e5e7eb;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-container input:focus,
+        .contact-container textarea:focus,
+        .contact-container select:focus {
+            outline: none;
+            border-color: #22c55e;
+        }
+
+        .contact-container button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #22c55e;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-container button:hover { background: #16a34a; }
+
+        .small-btn {
+            display: block;
+            width: fit-content;
+            padding: 10px 20px;
+            background: linear-gradient(45deg,#00e0ff,#22c55e);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.4s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            font-size: 14px;
+            margin: 15px auto 0 auto;
+            text-align: center;
+        }
+
+        .small-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+
+        /* ============================
+           Footer (Master Template)
+        ============================ */
+        footer {
+            background: #101112;
+            color: #e5e7eb;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        footer a { text-decoration: none; color: #22c55e; }
+        .social-icons { padding-right: 80px; }
+        .social-icons a { color: #e5e7eb; margin: 0 15px; font-size: 24px; transition: 0.3s; }
+
+        /* ================== TRANSLATE STYLES ================== */
+        .translate-wrapper {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            z-index: 9999;
+            background: #1e293b; 
+            border-radius: 8px;
+            border: 1px solid #22c55e;
+            min-width: 140px; 
+            padding: 8px 10px; 
+            display: flex;
+            align-items: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .close-translate {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 22px;
+            cursor: pointer;
+            margin-left: 10px; 
+            order: 2; 
+            line-height: 1;
+        }
+
+        .gtranslate_wrapper { order: 1; }
+
+        /* ============================
+           Responsive Logic
+        ============================ */
+        @media (max-width: 768px) {
+            header { padding: 8px !important; }
+            header .logo { height: 90px !important; width: 30%; order: 1; }
+            .call-btn { 
+                order: 2; 
+                margin-left: auto !important; 
+                margin-right: 90px;
+                font-size: 14px; 
+                padding: 6px 12px; 
+            }
+            .menu-toggle { display: block; order: 3; }
+
+            header nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 10px;
+                background: #101112;
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                width: max-content;
+                z-index: 999;
+            }
+            header nav.active { display: flex; }
+
+            .contact-container { margin: 60px 20px 50px 20px; padding: 20px; }
+            
+            footer { flex-direction: column; text-align: center; gap: 15px; justify-content: center; }
+            .social-icons { padding-right: 0 !important; margin-bottom: 20px; display: flex; justify-content: center; gap: 0px; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Background Canvas -->
 <canvas id="network-bg"></canvas>
 
-<!-- Header -->
 <header>
-  <img src="Logo.png" alt="Web Ashok Logo" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="About_Me.html">About Me</a>
-    <a href="Contact_Me.html">Contact Me</a>
-    <a href="terms.html">Terms</a>
-  </nav>
+    <img src="Logo.png" alt="Web Ashok Logo" class="logo">
+    <a href="tel:+9779764791464" class="call-btn">Call Me</a>
+    <div class="menu-toggle" id="mobile-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="About_Me.html">About Me</a>
+        <a href="Contact_Me.html">Contact Me</a>
+        <a href="terms.html">Terms</a>
+    </nav>
 </header>
 
-<!-- Contact Form -->
-<div class="contact-container">
-  <h2>Book Free Appointment</h2>
-  <form action="https://formspree.io/f/xgooardq" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="tel" name="phone" placeholder="Phone Number">
-
-    <select name="project" required>
-      <option value="" disabled selected>Choose Interested project</option>
-      <option value="Personal Websites">Personal Websites</option>
-      <option value="Business Websites">Business Websites</option>
-      <option value="Blog Websites">Blog and Informational Websites</option>
-      <option value="E-Commerce">E-Commerce and Booking Websites</option>
-      <option value="Maintenance">Maintenance and Hosting Support</option>
-    </select>
-    
-
-    <textarea name="message" rows="6" placeholder="Describe Your Requirements" required></textarea>
-
-    <button type="submit">Submit</button>
-  
-
-    <!-- Back to Home Button -->
-    <a href="index.html" class="small-btn">⬅ Back to Home</a>
-  </form>
+<div class="translate-wrapper" id="translateWrapper">
+    <div class="gtranslate_wrapper"></div>
+    <button class="close-translate" onclick="closeTranslate()">×</button>
 </div>
 
-<!-- Footer -->
+<div class="contact-container">
+    <h2>Book Free Appointment</h2>
+    <form action="https://formspree.io/f/xgooardq" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+
+        <select name="project" required>
+            <option value="" disabled selected>Choose a Project</option>
+            <option value="Personal Websites">Personal Websites</option>
+            <option value="Business Websites">Business Websites</option>
+            <option value="Blog Websites">Blog Websites</option>
+            <option value="E-Commerce">Booking Websites</option>
+            <option value="Maintenance">Maintenance and Hosting Support</option>
+        </select>
+
+        <textarea name="message" rows="6" placeholder="Describe Your Requirements" required></textarea>
+
+        <button type="submit">Submit</button>
+
+        <a href="index.html" class="small-btn">⬅ Back to Home</a>
+    </form>
+</div>
+
 <footer>
-  <div class="powered-by">
-    Powered by: <a href="Contact_Me.html" target="_blank">Ashok Pokhrel</a>
-  </div>
-  <div class="contact-info">
-    <p>Ashokpokhrel25@gmail.com | +977 9764791464</p>
-  </div>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/1Exya3yrER/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.tiktok.com/@webashok?_r=1&_t=ZS-94NftpQ56Ej" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://wa.me/9779764791464" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
+    <div class="powered-by">
+        Powered by: <a href="About_Me.html">Ashok Pokhrel</a>
+    </div>
+    <div class="contact-info">
+        <p><b>(Ashokpokhrel25@gmail.com <span style="color: #FFD700; margin: 0 5px;">|</span> +977 9764791464)</b></p>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1Exya3yrER/" target="_blank"><i class="fab fa-facebook-f" style="color: #1877F2;"></i></a>
+        <a href="https://www.tiktok.com/@webashok?_r=1&_t=ZS-94NftpQ56Ej" target="_blank"><i class="fab fa-tiktok" style="color: #FE2C55;"></i></a>
+        <a href="https://wa.me/9779764791464" target="_blank"><i class="fab fa-whatsapp" style="color: #25D366;"></i></a>
+    </div>
 </footer>
 
-<!--Start of Tawk.to Script-->
+<audio id="bgMusic" src="" loop></audio>
+
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -84,9 +328,111 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
 
-<!-- JS -->
-<script src="script3.js"></script>
+<script>
+    // ===== BACKGROUND ANIMATION =====
+    const canvas = document.getElementById("network-bg");
+    const ctx = canvas.getContext("2d");
+    let particlesArray = [];
+
+    const init = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        particlesArray = Array.from({length: 100}, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            speedX: (Math.random() - 0.5),
+            speedY: (Math.random() - 0.5)
+        }));
+    };
+
+    const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray.forEach(p => {
+            p.x += p.speedX; p.y += p.speedY;
+            if (p.x > canvas.width || p.x < 0) p.speedX *= -1;
+            if (p.y > canvas.height || p.y < 0) p.speedY *= -1;
+            ctx.fillStyle = "rgba(0,255,255,0.5)";
+            ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, Math.PI * 2); ctx.fill();
+        });
+
+        for (let i = 0; i < particlesArray.length; i++) {
+            for (let j = i; j < particlesArray.length; j++) {
+                let dx = particlesArray[i].x - particlesArray[j].x;
+                let dy = particlesArray[i].y - particlesArray[j].y;
+                if (dx*dx + dy*dy < 8000) {
+                    ctx.strokeStyle = "rgba(0,255,255,0.1)";
+                    ctx.beginPath(); ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y); ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animate);
+    };
+    init(); animate();
+    window.addEventListener("resize", init);
+
+    // ===== MOBILE MENU =====
+    function toggleMenu() {
+        document.getElementById("mobileMenu").classList.toggle("active");
+    }
+
+    // ===== CLICK SOUND & NAVIGATION =====
+    (function () {
+        const clickSound = new Audio("click.mp3");
+        clickSound.volume = 0.6;
+        document.addEventListener("click", function (e) {
+            const el = e.target.closest("a, button");
+            if (!el) return;
+            clickSound.currentTime = 0;
+            clickSound.play().catch(() => {});
+
+            if (el.tagName.toLowerCase() === "a") {
+                const href = el.getAttribute("href");
+                const target = el.getAttribute("target");
+                if (href && !href.startsWith("tel:") && !href.startsWith("#") && !href.startsWith("javascript:")) {
+                    e.preventDefault();
+                    setTimeout(() => {
+                        if (target === "_blank") window.open(href, "_blank");
+                        else window.location.href = href;
+                    }, 120);
+                }
+            }
+        });
+    })();
+
+    // ===== BACKGROUND MUSIC =====
+    document.addEventListener("click", function playMusic() {
+        const music = document.getElementById("bgMusic");
+        if (music) {
+            music.play().catch(err => console.log("Autoplay blocked:", err));
+            document.removeEventListener("click", playMusic);
+        }
+    });
+
+    // ===== TRANSLATE LOGIC =====
+    window.gtranslateSettings = {
+        "default_language": "en",
+        "languages": ["en", "ne", "hi", "zh-CN", "ko", "fr", "es", "ar", "pt", "de", "ja", "ru"],
+        "wrapper_selector": ".gtranslate_wrapper",
+        "flag_size": 24,
+        "alt_flags": {"en": "usa"}
+    };
+
+    document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('gt_selector')) {
+            if (e.target.value === 'en|en') {
+                location.reload();
+            }
+        }
+    });
+
+    function closeTranslate() {
+        var wrapper = document.getElementById('translateWrapper');
+        if (wrapper) wrapper.style.display = 'none';
+    }
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
 </body>
 </html>
