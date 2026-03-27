@@ -1,37 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Website Package - Web Ashok</title>
-<link rel="icon" href="Logotop.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website Package - Web Ashok</title>
+    <link rel="icon" href="Logotop.png" type="image/png">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- External CSS -->
-<link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="style4.css">
 </head>
 <body>
 
 <canvas id="network-bg"></canvas>
 
-<!-- Header -->
 <header>
-  <img src="Logo.png" alt="Web Ashok Logo" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="About_Me.html">About Me</a>
-    <a href="Contact_Me.html">Contact Me</a>
-    <a href="terms.html">Terms</a>
-  </nav>
+    <img src="Logo.png" alt="Web Ashok Logo" class="logo">
+    <a href="tel:+9779764791464" class="call-btn">Call Me</a>
+    <div class="menu-toggle" id="mobile-menu" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="About_Me.html">About Me</a>
+        <a href="Contact_Me.html">Contact Me</a>
+        <a href="terms.html">Terms</a>
+    </nav>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-  <div class="card">
+<div class="translate-wrapper" id="translateWrapper">
+    <div class="gtranslate_wrapper"></div>
+    <button class="close-translate" onclick="closeTranslate()">×</button>
+</div>
 
+<div class="about-container">
     <h1>Business Website Package – NPR 3,000/-</h1>
 
     <div class="center">
@@ -110,26 +113,24 @@
       <p style="margin-top:15px;">Start your professional business website today and grow your online presence.</p>
       <a href="index.html" class="small-btn">⬅ Back to Home</a>
     </div>
-
-  </div>
 </div>
 
-<!-- Footer -->
 <footer>
-  <div class="powered-by">
-    Powered by: <a href="Contact_Me.html" target="_blank">Ashok Pokhrel</a>
-  </div>
-  <div class="contact-info">
-    <p>Ashokpokhrel25@gmail.com | +977 9764791464</p>
-  </div>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/1Exya3yrER/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.tiktok.com/@webashok?_r=1&_t=ZS-94NftpQ56Ej" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://wa.me/9779764791464" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
+    <div class="powered-by">
+        Powered by: <a href="About_Me.html">Ashok Pokhrel</a>
+    </div>
+    <div class="contact-info">
+        <p><b>(Ashokpokhrel25@gmail.com <span style="color: #FFD700; margin: 0 5px;">|</span> +977 9764791464)</b></p>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1Exya3yrER/" target="_blank"><i class="fab fa-facebook-f" style="color: #1877F2;"></i></a>
+        <a href="https://www.tiktok.com/@webashok?_r=1&_t=ZS-94NftpQ56Ej" target="_blank"><i class="fab fa-tiktok" style="color: #FE2C55;"></i></a>
+        <a href="https://wa.me/9779764791464" target="_blank"><i class="fab fa-whatsapp" style="color: #25D366;"></i></a>
+    </div>
 </footer>
 
-<!--Start of Tawk.to Script-->
+<audio id="bgMusic" src="" loop></audio>
+
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -141,9 +142,8 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-
-<!-- External JS -->
 <script src="script4.js"></script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
 </body>
 </html>
