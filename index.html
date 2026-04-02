@@ -156,18 +156,20 @@
         .buttons button {
             padding: 8px 8px;
             margin: 5px;
+            border: 0.8px solid #0f1010;
+            box-shadow: 0 3px 0px #fdfcfc;
             border: none;
             border-radius: 6px;
             background: #22c55e;
             color: #fff;
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
         }
         .buttons button:hover { background: #16a34a; transform: scale(1.05); }
 
         .package-btn-wrapper {
     text-align: center;
-    margin: 30px 0 50px 0;
+    margin: 5px 0 15px 0;
 }
 
 .package-btn {
@@ -178,9 +180,13 @@
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 40px;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+    border: 3px solid rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 .package-btn:hover {
@@ -245,8 +251,10 @@
             @media (max-width: 768px) {
     /* Make the overall 3D area shorter */
     .scene { 
-        height: 350px !important; 
+        height: 280px !important; 
         margin: 10px 0 !important; 
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 
     /* Make the individual cards smaller */
@@ -419,8 +427,18 @@
     <p>Get a <span class="offer-highlight">40% Discount</span> on each website</p>
    <a href="https://wa.me/9779764791464?text=I%20want%20to%20grab%20the%2040%25%20discount%20offer!" 
    target="_blank" 
-   style="display: inline-block; text-decoration: none; padding: 10px 25px; background: #22c55e; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
-   GRAB NOW
+   style="display: inline-block; 
+          text-decoration: none; 
+          padding: 12px 30px; 
+          background: #22c55e; 
+          color: white; 
+          border: 1.5px solid #000; 
+          border-radius: 8px; 
+          cursor: pointer; 
+          font-weight: bold; 
+          box-shadow: 0 4px 0px #16a34a, 0 6px 10px rgba(0,0,0,0.3);
+          transition: all 0.2s ease;">
+    GRAB NOW
 </a>
 </div>
 
