@@ -1,0 +1,224 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Packages</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #1a1a40, #0a0a23);
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #ffcc00;
+}
+
+.sub {
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: linear-gradient(145deg, #1f1f4d, #14143a);
+    border-radius: 15px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 28px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+ul li::before {
+    content: "✔ ";
+    color: #00ffcc;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(to right, #ff7b00, #ffcc00);
+    color: #000;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #ffcc00, #ff7b00);
+}
+
+.footer-nav {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-home {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #00f2fe; /* Light cyan text */
+    text-decoration: none;
+    border: 1px solid rgba(0, 242, 254, 0.5); /* Semi-transparent border */
+    border-radius: 20px;
+    background: rgba(0, 242, 254, 0.05); /* Very light tint */
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.btn-home:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    color: #000;
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+/* Ensure it moves with the rest of your content on mobile */
+@media (max-width: 768px) {
+    .footer-nav {
+        transform: translateX(-20px);
+    }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚀 Get Your <span class="highlight">Professional Website</span></h1>
+<p class="sub">Personal | Business | Company Website Packages</p>
+
+<div class="cards">
+
+<!-- Package 1 -->
+<div class="card">
+    <h2>Package 1</h2>
+    <div class="price">Rs. 5000/-</div>
+    <ul>
+        <li>Free (.com.np) Domain & Hosting Setup</li>
+        <li><strong>Portfolio Based Frontend Website</strong></li>
+        <li>Responsive & Modern Design</li>
+        <li>Professional Portfolio Layout</li>
+        <li>Easy-to-Manage Pages</li>
+        <li>SEO-Friendly For Better Visibility</li>
+    </ul>
+    <a href="#" class="btn" onclick="orderNow('Package 1 - Rs.3000')">Order Now</a>
+</div>
+
+<!-- Package 2 -->
+<div class="card">
+    <h2>Package 2</h2>
+    <div class="price">Rs. 7,000/-</div>
+    <ul>
+        <li>Free (.com) Domain & Hosting Setup</li>
+        <li><strong>Portfolio Based Frontend Website</strong></li>
+        <li>Responsive & Modern Design</li>
+        <li>Professional Portfolio Layout</li>
+        <li>Easy-to-Manage Pages</li>
+        <li>SEO-Friendly For Better Visibility</li>
+    </ul>
+    <a href="#" class="btn" onclick="orderNow('Package 2 - Rs.5000')">Order Now</a>
+</div>
+
+<!-- Package 3 -->
+<div class="card">
+    <h2>Package 3</h2>
+    <div class="price">Rs. 10,500/-</div>
+    <ul>
+        <li>Free (.com) Domain & Hosting Setup</li>
+        <li><strong>Booking & Order Website</strong></li>
+        <li><strong>Blog & News Website</strong></li>
+        <li>Premium Modern Design</li>
+        <li>High-Quality Layout</li>
+        <li>SEO-Friendly For Better Visibility</li>
+    </ul>
+    <a href="#" class="btn" onclick="orderNow('Package 3 - Rs.6620')">Order Now</a>
+</div>
+
+</div>
+
+</div>
+<br>
+<div class="footer-nav">
+    <a href="index.html" class="btn-home">← Back to Home</a>
+</div>
+
+<script>
+function orderNow(packageName) {
+    let phone = "9779764791464"; // 🔥 Replace with your WhatsApp number
+    let message = `Hello, I want to order ${packageName} website package. Please provide more details.`;
+
+    let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
