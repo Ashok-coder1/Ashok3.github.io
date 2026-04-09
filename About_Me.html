@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ============================
-           Global & Background (From Index)
-        ============================ */
+        
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
@@ -30,9 +29,7 @@
             z-index: -1;
         }
 
-        /* ============================
-           Header (Master Template)
-        ============================ */
+    
         header {
             display: flex;
             justify-content: space-between;
@@ -91,9 +88,7 @@
             cursor: pointer;
         }
 
-        /* ============================
-           About Content Style (Your Style)
-        ============================ */
+    
         .about-container {
             max-width: 900px;
             margin: 120px auto 60px auto;
@@ -167,9 +162,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
 
-        /* ============================
-           Footer (Master Template)
-        ============================ */
+    
         footer {
             background: #101112;
             color: #e5e7eb;
@@ -183,7 +176,7 @@
         .social-icons { padding-right: 80px; }
         .social-icons a { color: #e5e7eb; margin: 0 15px; font-size: 24px; transition: 0.3s; }
 
-        /* ================== TRANSLATE STYLES ================== */
+    
         .translate-wrapper {
             position: fixed;
             top: 120px;
@@ -212,9 +205,7 @@
 
         .gtranslate_wrapper { order: 1; }
 
-        /* ============================
-           Responsive Logic
-        ============================ */
+    
         @media (max-width: 768px) {
             header { padding: 8px !important; }
             header .logo { height: 95px !important; width: 30%; order: 1; }
@@ -338,7 +329,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <script>
-    // ===== BACKGROUND ANIMATION =====
+
     const canvas = document.getElementById("network-bg");
     const ctx = canvas.getContext("2d");
     let particlesArray = [];
@@ -380,12 +371,12 @@ s0.parentNode.insertBefore(s1,s0);
     init(); animate();
     window.addEventListener("resize", init);
 
-    // ===== MOBILE MENU =====
+
     function toggleMenu() {
         document.getElementById("mobileMenu").classList.toggle("active");
     }
 
-    // ===== CLICK SOUND & NAVIGATION =====
+
     (function () {
         const clickSound = new Audio("click.mp3");
         clickSound.volume = 0.6;
@@ -409,7 +400,7 @@ s0.parentNode.insertBefore(s1,s0);
         });
     })();
 
-    // ===== BACKGROUND MUSIC =====
+
     document.addEventListener("click", function playMusic() {
         const music = document.getElementById("bgMusic");
         if (music) {
@@ -418,7 +409,7 @@ s0.parentNode.insertBefore(s1,s0);
         }
     });
 
-    // ===== TRANSLATE LOGIC =====
+
     window.gtranslateSettings = {
         "default_language": "en",
         "languages": ["en", "ne", "hi", "zh-CN", "ko", "fr", "es", "ar", "pt", "de", "ja", "ru"],
