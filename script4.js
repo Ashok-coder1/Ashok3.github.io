@@ -8,7 +8,7 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 
-// ===== BACKGROUND ANIMATION =====
+
 const canvas = document.getElementById("network-bg");
 const ctx = canvas.getContext("2d");
 let particlesArray = [];
@@ -50,12 +50,10 @@ const animate = () => {
 init(); animate();
 window.addEventListener("resize", init);
 
-// ===== MOBILE MENU =====
 function toggleMenu() {
     document.getElementById("mobileMenu").classList.toggle("active");
 }
 
-// ===== CLICK SOUND & NAVIGATION =====
 (function () {
     const clickSound = new Audio("click.mp3");
     clickSound.volume = 0.6;
@@ -79,7 +77,6 @@ function toggleMenu() {
     });
 })();
 
-// ===== BACKGROUND MUSIC =====
 document.addEventListener("click", function playMusic() {
     const music = document.getElementById("bgMusic");
     if (music) {
@@ -88,7 +85,7 @@ document.addEventListener("click", function playMusic() {
     }
 });
 
-// ===== TRANSLATE LOGIC =====
+
 window.gtranslateSettings = {
     "default_language": "en",
     "languages": ["en", "ne", "hi", "zh-CN", "ko", "fr", "es", "ar", "pt", "de", "ja", "ru"],
