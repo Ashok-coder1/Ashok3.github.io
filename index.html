@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ================== GLOBAL STYLES ================== */
+    
         body {
             margin: 0;
             background: #0f172a;
@@ -27,7 +28,7 @@
             z-index: -1;
         }
 
-        /* ================== HEADER ================== */
+    
         header {
             display: flex;
             justify-content: space-between;
@@ -87,7 +88,7 @@
             cursor: pointer;
         }
 
-        /* ================== CAROUSEL ================== */
+    
         .scene {
             width: 100%;
             height: 400px;
@@ -124,7 +125,7 @@
         .carousel-overlay {
             position: absolute;
             bottom: 0;
-            height: 35%; /* Increased for better spacing */
+            height: 35%; 
             width: 100%;
             background: #000;
             display: flex;
@@ -151,7 +152,7 @@
         }
         .carousel-overlay a:hover { background: #16a34a; transform: scale(1.05); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
 
-        /* ================== BUTTONS ================== */
+        
         .buttons { text-align: center; margin-bottom: 50px; }
         .buttons button {
             padding: 8px 8px;
@@ -195,7 +196,7 @@
 }
 
 
-        /* ================== FOOTER ================== */
+        
         footer {
             background: #101112;
             color: #e5e7eb;
@@ -218,14 +219,14 @@
 
 
 
-        /* ================== RESPONSIVENESS ================== */
+        
         @media (max-width: 768px) {
             header { padding: 8px !important; }
             header .logo { height: 110px !important; width: 30%; order: 1; }
             .call-btn { 
                 order: 2; 
                 margin-left: auto !important; 
-                margin-right: 105px; /* Moved to the left (closer to logo) */
+                margin-right: 105px; 
                 font-size: 14px; 
                 padding: 6px 12px; 
                 width: auto; 
@@ -249,7 +250,7 @@
             header nav.active { display: flex; }
 
             @media (max-width: 768px) {
-    /* Make the overall 3D area shorter */
+    
     .scene { 
         height: 280px !important; 
         margin: 10px 0 !important; 
@@ -257,13 +258,13 @@
         margin-bottom: 0 !important;
     }
 
-    /* Make the individual cards smaller */
+    
     .carousel { 
         width: 220px !important; 
         height: 310px !important; 
     }
 
-    /* Reduce the height of the black info box at the bottom of cards */
+
     .carousel-overlay { 
         height: 50% !important; 
         padding: 10px !important;
@@ -271,19 +272,19 @@
 }
 
 @media (max-width: 768px) {
-    /* Title (e.g., Personal Websites) */
+
     .carousel-overlay h3 { 
         font-size: 14px !important; 
         margin-bottom: 2px !important;
     }
 
-    /* Price (e.g., NPR 3,000) */
+    
     .carousel-overlay p { 
         font-size: 11px !important; 
         margin: 2px 0 !important;
     }
 
-    /* Order/Hire Now Button */
+  
     .carousel-overlay a {
         padding: 5px 12px !important;
         font-size: 11px !important;
@@ -306,7 +307,7 @@
             footer { flex-direction: column; text-align: center; gap: 15px; }
             .social-icons { padding-right: 0 !important; margin-bottom: 20px; }
 
-            /* Mobile Popup Responsiveness Fix */
+            
             #offerPopup {
                 width: 70% !important;
                 padding: 20px 15px !important;
@@ -323,7 +324,7 @@
             .carousel-overlay { height: 60%; } /* Even taller for very small screens */
         }
 
-        /* --- TRANSLATE STYLES --- */
+    
         .translate-wrapper {
             position: fixed;
             top: 120px;
@@ -354,7 +355,7 @@
             order: 1; 
         }
 
-        /* --- OFFER POPUP STYLES --- */
+    
         #offerPopup {
             display: none;
             position: fixed;
@@ -548,7 +549,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <script>
-    // ===== POPUP LOGIC - SHOW EVERY REFRESH =====
+    
     window.onload = function() {
         setTimeout(() => {
             document.getElementById('popupOverlay').style.display = 'block';
@@ -561,7 +562,7 @@ s0.parentNode.insertBefore(s1,s0);
         document.getElementById('offerPopup').style.display = 'none';
     }
 
-    // ===== BACKGROUND MUSIC =====
+   
     document.addEventListener("click", function playMusic() {
         const music = document.getElementById("bgMusic");
         if (music) {
@@ -570,7 +571,7 @@ s0.parentNode.insertBefore(s1,s0);
         }
     });
 
-    // ===== CAROUSEL ROTATION =====
+   
     const carousel = document.getElementById("carousel");
     const carouselItems = carousel ? carousel.querySelectorAll(".carousel-item") : [];
     const buttons = document.querySelectorAll(".buttons button");
@@ -618,7 +619,7 @@ s0.parentNode.insertBefore(s1,s0);
     }
 
 
-    // ===== MOBILE SWIPE =====
+
     let startX = 0;
     if (carousel) {
         carousel.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
@@ -628,7 +629,7 @@ s0.parentNode.insertBefore(s1,s0);
         });
     }
 
-    // ===== NETWORK BACKGROUND =====
+    
     const canvas = document.getElementById("network-bg");
     const ctx = canvas ? canvas.getContext("2d") : null;
 
@@ -672,7 +673,7 @@ s0.parentNode.insertBefore(s1,s0);
         window.addEventListener("resize", init);
     }
 
-    // ===== HELPERS =====
+   
     function toggleMenu() { document.getElementById("mobileMenu").classList.toggle("active"); }
 
     (function() {
@@ -696,7 +697,7 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <script>
-    // ===== TRANSLATE LOGIC - ENGLISH FIX =====
+    
     window.gtranslateSettings = {
         "default_language": "en",
         "languages": ["en", "ne", "hi", "zh-CN", "ko", "fr", "es", "ar", "pt", "de", "ja", "ru"],
@@ -705,11 +706,11 @@ s0.parentNode.insertBefore(s1,s0);
         "alt_flags": {"en": "usa"}
     };
 
-    // Monitor for language change to fix English "back to normal" issue
+    
     document.addEventListener('change', function(e) {
         if (e.target.classList.contains('gt_selector')) {
             if (e.target.value === 'en|en') {
-                location.reload(); // Hard refresh to reset page to original English
+                location.reload(); 
             }
         }
     });
