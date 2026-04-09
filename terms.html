@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ================== GLOBAL STYLES (MASTER) ================== */
+    
         body {
             margin: 0;
             background: #0f172a;
@@ -27,7 +28,7 @@
             z-index: -1;
         }
 
-        /* ================== HEADER (MASTER) ================== */
+        
         header {
             display: flex;
             justify-content: space-between;
@@ -86,7 +87,7 @@
             cursor: pointer;
         }
 
-        /* ================== TERMS CONTENT (YOUR STYLE) ================== */
+
         .terms-container {
             max-width: 900px;
             margin: 100px auto 50px auto;
@@ -155,7 +156,7 @@
             box-shadow:0 10px 25px rgba(0,0,0,0.6);
         }
 
-        /* ================== FOOTER (MASTER) ================== */
+        
         footer {
             background: #101112;
             color: #e5e7eb;
@@ -171,7 +172,7 @@
         .social-icons { padding-right: 80px; }
         .social-icons a { color: #e5e7eb; margin: 0 15px; font-size: 24px; transition: 0.3s; }
 
-        /* ================== TRANSLATE & POPUP STYLES (MASTER) ================== */
+    
         .translate-wrapper {
             position: fixed;
             top: 120px;
@@ -191,7 +192,7 @@
             background: none; border: none; color: #ffffff; font-size: 22px; cursor: pointer; margin-left: 10px; order: 2; line-height: 1;
         }
 
-        /* ================== RESPONSIVENESS (MASTER MERGED) ================== */
+    
         @media (max-width: 768px) {
             header { padding: 8px !important; }
             header .logo { height:90px !important; width: 30%; order: 1; }
@@ -227,7 +228,7 @@
             .social-icons { padding-right: 0 !important; margin-bottom: 15px; gap: 0px; }
         }
 
-        /* New Button Fix */
+        
   .lets-talk-btn {
     font-size: 13px !important;
     padding: 6px 10px !important;
@@ -341,11 +342,11 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 
 <script>
-    // ===== MASTER SCRIPTS =====
+    
     function toggleMenu() { document.getElementById("mobileMenu").classList.toggle("active"); }
     function closeTranslate() { document.getElementById('translateWrapper').style.display = 'none'; }
 
-    // Background Music Logic
+    
     document.addEventListener("click", function playMusic() {
         const music = document.getElementById("bgMusic");
         if (music) {
@@ -354,7 +355,7 @@ s0.parentNode.insertBefore(s1,s0);
         }
     });
 
-    // Network Background logic
+    
     const canvas = document.getElementById("network-bg");
     const ctx = canvas.getContext("2d");
     let particlesArray = [];
@@ -393,7 +394,7 @@ s0.parentNode.insertBefore(s1,s0);
     init(); animate();
     window.addEventListener("resize", init);
 
-    // Click Sound & Navigation Logic
+    
     (function() {
         const clickSound = new Audio("click.mp3");
         document.addEventListener("click", (e) => {
@@ -411,7 +412,7 @@ s0.parentNode.insertBefore(s1,s0);
         });
     })();
 
-    // GTranslate Settings
+    
     window.gtranslateSettings = {"default_language":"en","languages":["en","ne","hi","zh-CN","ko","fr","es","ar","pt","de","ja","ru"],"wrapper_selector":".gtranslate_wrapper","flag_size":24,"alt_flags":{"en":"usa"}};
     document.addEventListener('change', function(e) {
         if (e.target.classList.contains('gt_selector') && e.target.value === 'en|en') {
