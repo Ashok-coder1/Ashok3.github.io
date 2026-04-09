@@ -1,13 +1,11 @@
-/* ============================
-    Global & Background (From Index)
-============================ */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: #0f172a;
     overflow-x: hidden;
     color: #e5e7eb;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #network-bg {
@@ -19,9 +17,6 @@ body {
     z-index: -1;
 }
 
-/* ============================
-    Header (Master Template)
-============================ */
 header {
     display: flex;
     justify-content: space-between;
@@ -80,9 +75,6 @@ header nav a:hover { color: #22c55e; transform: scale(1.05); }
     cursor: pointer;
 }
 
-/* ============================
-    Content Style
-============================ */
 .about-container {
     max-width: 900px;
     margin: 100px auto 60px auto;
@@ -100,8 +92,8 @@ header nav a:hover { color: #22c55e; transform: scale(1.05); }
 }
 
 .about-container h1 { text-align: center; font-size: 25px; margin-bottom: 20px; }
-.about-container h2 { font-size: 15px; margin-top: 30px; margin-bottom: 15px; color: #00e0ff; }
-.about-container p { margin-top: 10px; line-height: 1.6; font-size: 14px; }
+.about-container h2 { font-size: 18px; margin-top: 30px; margin-bottom: 15px; color: #00e0ff; }
+.about-container p { margin-top: 10px; line-height: 1.6; font-size: 16px; }
 
 .about-container ul {
     list-style: none;
@@ -165,9 +157,6 @@ header nav a:hover { color: #22c55e; transform: scale(1.05); }
     box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* ============================
-    Footer (Master Template)
-============================ */
 footer {
     background: #101112;
     color: #e5e7eb;
@@ -181,7 +170,7 @@ footer a { text-decoration: none; color: #22c55e; }
 .social-icons { padding-right: 80px; }
 .social-icons a { color: #e5e7eb; margin: 0 15px; font-size: 24px; transition: 0.3s; }
 
-/* ================== TRANSLATE STYLES ================== */
+
 .translate-wrapper {
     position: fixed;
     top: 120px;
@@ -210,9 +199,6 @@ footer a { text-decoration: none; color: #22c55e; }
 
 .gtranslate_wrapper { order: 1; }
 
-/* ============================
-    Responsive Logic
-============================ */
 @media (max-width: 768px) {
     header { padding: 8px !important; }
     header .logo { height: 95px !important; width: 30%; order: 1; }
