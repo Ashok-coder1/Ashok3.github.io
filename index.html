@@ -929,6 +929,26 @@
       });
     </script>
 
+    <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('header nav');
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    navMenu.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnToggle = menuToggle.contains(event.target);
+
+    if (navMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnToggle) {
+      navMenu.classList.remove('active');
+    }
+  });
+</script>
+    
+
     <div
       id="callPopup"
       style="
