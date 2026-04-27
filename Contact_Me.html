@@ -177,8 +177,55 @@
             flex-wrap: wrap;
         }
         footer a { text-decoration: none; color: #22c55e; }
-        .social-icons { padding-right: 80px; }
-        .social-icons a { color: #e5e7eb; margin: 0 15px; font-size: 24px; transition: 0.3s; }
+        
+.social-icons {
+  padding-right: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e5e7eb;
+  margin: 0 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  background: #1b1b1b;
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+}
+
+.social-icons a:hover .fa-facebook-f {
+  color: #ffffff;
+}
+
+.social-icons a .fa-facebook-f {
+  color: #1877f2;
+}
+.social-icons a .fa-tiktok {
+  color: #fe2c55;
+}
+.social-icons a .fa-whatsapp {
+  color: #25d366;
+}
+.social-icons a .fa-instagram {
+  color: #e1306c;
+}
+.social-icons a .fa-youtube {
+  color: #ff0000;
+}
 
         
         .translate-wrapper {
