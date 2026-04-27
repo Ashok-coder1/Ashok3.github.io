@@ -1,224 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebAshok | Professional Website Packages</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
 
-        body {
-            background: radial-gradient(circle at top, #1a1a40, #0a0a23);
-            color: #ffffff;
-            padding: 15px; /* Reduced for screenshot fit */
-            line-height: 1.4;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      body {
+        background: radial-gradient(circle at top, #1a1a40, #0a0a23);
+        color: #ffffff;
+        padding: 15px; /* Reduced for screenshot fit */
+        line-height: 1.4;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        .container {
-            max-width: 1100px;
-            width: 100%;
-            margin: auto;
-            text-align: center;
-        }
+      .container {
+        max-width: 1100px;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+      }
 
-        header {
-            margin-bottom: 10px;
-        }
+      header {
+        margin-bottom: 10px;
+      }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-        }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+      }
 
-        .highlight {
-            color: #ffcc00;
-        }
+      .highlight {
+        color: #ffcc00;
+      }
 
-        .sub {
-            margin-bottom: 25px;
-            color: #b0b0cc;
-            font-size: 1rem;
-        }
+      .sub {
+        margin-bottom: 25px;
+        color: #b0b0cc;
+        font-size: 1rem;
+      }
 
+      .cards {
+        display: flex;
+        flex-wrap: nowrap; /* Keep them side-by-side for desktop screenshot */
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .card {
+        background: linear-gradient(145deg, #1f1f4d, #14143a);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 15px 20px;
+        width: 320px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffcc00;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 8px;
+      }
+
+      ul {
+        list-style: none;
+        text-align: left;
+        margin-bottom: 15px;
+      }
+
+      ul li {
+        margin: 5px 0;
+        font-size: 0.88rem;
+        display: flex;
+        align-items: center;
+        color: #e0e0e0;
+      }
+
+      ul li::before {
+        content: "✔";
+        color: #00ffcc;
+        font-weight: bold;
+        margin-right: 8px;
+      }
+
+      .btn {
+        display: block;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #ff7b00, #ffcc00);
+        color: #000;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.9rem;
+        transition: 0.2s;
+        margin-top: auto;
+      }
+
+      .footer-brand {
+        margin-top: 20px;
+        font-size: 1rem;
+        color: #8888aa;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* Back to Home Button Style */
+      .btn-home {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 10px 25px;
+        border: 1px solid #ffcc00;
+        color: #ffcc00;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .btn-home:hover {
+        background: #ffcc00;
+        color: #0a0a23;
+      }
+
+      @media (max-width: 768px) {
         .cards {
-            display: flex;
-            flex-wrap: nowrap; /* Keep them side-by-side for desktop screenshot */
-            gap: 15px;
-            justify-content: center;
+          flex-direction: column;
+          align-items: center;
         }
-
         .card {
-            background: linear-gradient(145deg, #1f1f4d, #14143a);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 15px 20px;
-            width: 320px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+          width: 100%;
+          max-width: 300px;
         }
-
-        .card h2 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
+        body {
+          padding: 20px;
+          display: block;
         }
-
-        .price {
-            font-size: 24px;
-            font-weight: 800;
-            color: #ffcc00;
-            margin-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 8px;
-        }
-
-        ul {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        ul li {
-            margin: 5px 0;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            color: #e0e0e0;
-        }
-
-        ul li::before {
-            content: "✔";
-            color: #00ffcc;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .btn {
-            display: block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #ff7b00, #ffcc00);
-            color: #000;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: 0.2s;
-            margin-top: auto;
-        }
-
-        .footer-brand {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #8888aa;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        /* Back to Home Button Style */
-        .btn-home {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 10px 25px;
-            border: 1px solid #ffcc00;
-            color: #ffcc00;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-home:hover {
-            background: #ffcc00;
-            color: #0a0a23;
-        }
-
-        @media (max-width: 768px) {
-            .cards { flex-direction: column; align-items: center; }
-            .card { width: 100%; max-width: 300px; }
-            body { padding: 20px; display: block; }
-        }
+      }
     </style>
-</head>
-<body>
-
-<div class="container">
-    <header>
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <h1>🚀 Get Your <span class="highlight">Professional Website</span></h1>
         <p class="sub">Personal | Business | Company Website Packages</p>
-    </header>
+      </header>
 
-    <div class="cards">
+      <div class="cards">
         <div class="card">
-            <h2>Package 1</h2>
-            <div class="price">Rs. 5,000/-</div>
-            <ul>
-                <li>Free Domain & Hosting Setup</li>
-                <li><strong>Portfolio Based Frontend Website</strong></li>
-                <li>Up to 3 Professional Pages</li>
-                <li>Responsive & Modern Design</li>
-                <li>Professional Portfolio Layout</li>
-                <li>Easy-to-Manage Pages</li>
-                <li>SEO-Friendly For Better Visibility</li>
-            </ul>
-            <a href="javascript:void(0)" class="btn" onclick="orderNow('Package 1', 'Rs.5000')">Order Now</a>
+          <h2>Package 1</h2>
+          <div class="price">Rs. 5,000/-</div>
+          <ul>
+            <li>Free Domain & Hosting Setup</li>
+            <li><strong>Portfolio Based Frontend Website</strong></li>
+            <li>Up to 3 Professional Pages</li>
+            <li>Responsive & Modern Design</li>
+            <li>Professional Portfolio Layout</li>
+            <li>Easy-to-Manage Pages</li>
+            <li>SEO-Friendly For Better Visibility</li>
+          </ul>
+          <a
+            href="javascript:void(0)"
+            class="btn"
+            onclick="orderNow('Package 1', 'Rs.5000')"
+            >Order Now</a
+          >
         </div>
 
         <div class="card">
-            <h2>Package 2</h2>
-            <div class="price">Rs. 9,000/-</div>
-            <ul>
-                <li>Free Domain & Hosting Setup</li>
-                <li><strong>Professional Frontend Website</strong></li>
-                <li>Up to 5 Professional Pages</li>
-                <li>Contact Form, Call & WhatsApp Button</li>
-                <li>Responsive & Modern Design</li>
-                <li>Professional Layout</li>
-                <li>Easy-to-Manage Pages</li>
-                <li>SEO-Friendly For Better Visibility</li>
-            </ul>
-            <a href="javascript:void(0)" class="btn" onclick="orderNow('Package 2', 'Rs.7000')">Order Now</a>
+          <h2>Package 2</h2>
+          <div class="price">Rs. 9,000/-</div>
+          <ul>
+            <li>Free Domain & Hosting Setup</li>
+            <li><strong>Professional Frontend Website</strong></li>
+            <li>Up to 5 Professional Pages</li>
+            <li>Contact Form, Call & WhatsApp Button</li>
+            <li>Responsive & Modern Design</li>
+            <li>Professional Layout</li>
+            <li>Easy-to-Manage Pages</li>
+            <li>SEO-Friendly For Better Visibility</li>
+          </ul>
+          <a
+            href="javascript:void(0)"
+            class="btn"
+            onclick="orderNow('Package 2', 'Rs.9,000')"
+            >Order Now</a
+          >
         </div>
 
         <div class="card">
-            <h2>Package 3</h2>
-            <div class="price">Rs. 13,500/-</div>
-            <ul>
-                <li>Free Domain & Hosting Setup</li>
-                <li><strong>Booking & Order Website</strong></li>
-                <li><strong>Blog & News Website</strong></li>
-                <li>Up to 7 Professional Pages</li>
-                <li>Professional Admin Panel</li>
-                <li>Premium Modern Design</li>
-                <li>High-Quality Layout</li>
-                <li>SEO-Friendly For Better Visibility</li>
-                <li>Customized Functionality</li>
-            </ul>
-            <a href="javascript:void(0)" class="btn" onclick="orderNow('Package 3', 'Rs.10500')">Order Now</a>
+          <h2>Package 3</h2>
+          <div class="price">Rs. 13,500/-</div>
+          <ul>
+            <li>Free Domain & Hosting Setup</li>
+            <li><strong>Booking & Order Website</strong></li>
+            <li><strong>Blog & News Website</strong></li>
+            <li>Up to 7 Professional Pages</li>
+            <li>Professional Admin Panel</li>
+            <li>Premium Modern Design</li>
+            <li>High-Quality Layout</li>
+            <li>SEO-Friendly For Better Visibility</li>
+            <li>Customized Functionality</li>
+          </ul>
+          <a
+            href="javascript:void(0)"
+            class="btn"
+            onclick="orderNow('Package 3', 'Rs.13,500')"
+            >Order Now</a
+          >
         </div>
+      </div>
+
+      <a href="index.html" class="btn-home">← Back to Home</a>
     </div>
 
-    <a href="index.html" class="btn-home">← Back to Home</a>
-</div>
-
-<script>
-function orderNow(packageName, price) {
-    const phone = "9779764791464"; 
-    const message = `Hello, I want to order the ${packageName} website package (${price}).`;
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-}
-</script>
-
-</body>
+    <script>
+      function orderNow(packageName, price) {
+        const phone = "9779764791464";
+        const message = `Hello, I want to order the ${packageName} website package (${price}).`;
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
 </html>
